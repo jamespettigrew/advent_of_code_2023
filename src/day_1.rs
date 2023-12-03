@@ -1,7 +1,6 @@
 use std::collections::HashMap;
 
-// Left part A solution for posterity
-fn solve_a(input: Vec<&str>) -> usize {
+pub fn solve_a(input: &Vec<&str>) -> usize {
     let parse_calibration_value = |line: &str| -> usize {
         let mut digits = line.chars().filter_map(|c| c.to_digit(10));
         let first_digit = digits
@@ -18,7 +17,7 @@ fn solve_a(input: Vec<&str>) -> usize {
         .sum()
 }
 
-pub fn solve(input: Vec<&str>) -> usize {
+pub fn solve_b(input: &Vec<&str>) -> usize {
     let map = HashMap::from([
         ("1", 1),
         ("2", 2),
@@ -71,7 +70,7 @@ mod tests {
     #[test]
     fn test_digits() {
         let input = vec!["1abc2", "pqr3stu8vwx", "a1b2c3d4e5f", "treb7uchet"];
-        let result = solve(input);
+        let result = solve_a(&input);
         assert_eq!(result, 142);
     }
 
@@ -86,7 +85,7 @@ mod tests {
             "zoneight234",
             "7pqrstsixteen",
         ];
-        let result = solve(input);
+        let result = solve_b(&input);
         assert_eq!(result, 281);
     }
 }
