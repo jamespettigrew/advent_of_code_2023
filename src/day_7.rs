@@ -5,7 +5,7 @@ struct Hand(String, bool); // bool is for part b Joker rule lmao
 
 #[derive(Clone, Copy, Eq, PartialEq, PartialOrd, Ord)]
 enum Card {
-    J,
+    J, // Order changes in part b, breaks part a
     Two,
     Three,
     Four,
@@ -102,7 +102,7 @@ impl Ord for Hand {
                 },
                 HandType::OnePair => match joker_count {
                     2 => HandType::ThreeOfAKind,
-                    1 => HandType::TwoPair,
+                    1 => HandType::ThreeOfAKind,
                     _ => HandType::OnePair,
                 },
                 HandType::HighCard => match joker_count {
