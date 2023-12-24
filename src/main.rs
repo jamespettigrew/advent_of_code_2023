@@ -6,6 +6,7 @@ mod day_5;
 mod day_6;
 mod day_7;
 mod day_8;
+mod day_9;
 
 use std::fs;
 
@@ -65,6 +66,12 @@ fn main() {
             input_b: "day_8a.in".to_string(),
             solve_a: day_8::solve_a,
             solve_b: day_8::solve_b,
+        },
+        Day {
+            input_a: "day_9a.in".to_string(),
+            input_b: "day_9a.in".to_string(),
+            solve_a: day_9::solve_a,
+            solve_b: day_9::solve_b,
         },
     ];
 
